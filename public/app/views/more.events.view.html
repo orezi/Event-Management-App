@@ -1,14 +1,14 @@
 <div ng-controller="moreEventsCtrl" data-ng-init="fetchEvents()" layout= "row" id="moreevent-container">
-	<div layout="column">
+  <div layout="column">
     <section layout="row" flex>
       <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
         <md-toolbar class="md-theme-indigo">
-          <h1 class="md-toolbar-tools">Filter by...</h1>
+          <h1 class="md-toolbar-tools" id="filter-text">Filter by...</h1>
         </md-toolbar>
         <md-content layout-padding>
           <div class="col-md-2">
-  		      Event Name <input type="text" ng-model="find.name">
-  		    </div>        
+            Event Name <input type="text" ng-model="find.name">
+          </div>        
           <md-select aria-label="sel" id="sideTags" ng-model="find.category" placeholder="Category" style="display: block;">  
             <md-option ng-click="fetchEvents()" value="">All</md-option>
             <md-option placeholder="Category" ng-repeat="category in categories" value="{{category.name}}">{{category.name}}
@@ -19,21 +19,21 @@
       </md-sidenav>
       <md-content flex layout-padding style="margin-top:10px">
         <div layout="column" layout-fill layout-align="top center">
-					<div id="event-container">
-					  <div ng-repeat="event in filtered =(eventList | filter: find)" >
-					    <div class="card small row" layout id="whiteFrame">
-					      <div>
-					        <img ng-src="{{event.imageUrl}}" class="responsive-img" id="image-preview">
-					      </div>
-					      <div ui-sref="user.eventDetails({event_id: event._id})">
-					        <p>{{event.startDate | date:'medium'}}</p>
-					        <p><span class="card-title black-text"><strong>{{event.name | uppercase}}</strong></span></p>
-					        <p>Country: {{event.venue.country}}</p>
-					        <p>Category: {{event.category | uppercase}}</p>
+          <div id="event-container">
+            <div ng-repeat="event in filtered =(eventList | filter: find)" >
+              <div class="card small row" layout id="whiteFrame">
+                <div>
+                  <img ng-src="{{event.imageUrl}}" class="responsive-img" id="image-preview">
+                </div>
+                <div ui-sref="user.eventDetails({event_id: event._id})">
+                  <p>{{event.startDate | date:'medium'}}</p>
+                  <p><span class="card-title black-text"><strong>{{event.name | uppercase}}</strong></span></p>
+                  <p>Country: {{event.venue.country}}</p>
+                  <p>Category: {{event.category | uppercase}}</p>
                   <md-button ui-sref="user.eventDetails({event_id: event._id})">Click to see more...</md-button>
-					      </div>
-  					  </div>
-  					</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </md-content>

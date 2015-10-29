@@ -124,10 +124,10 @@ img.bg {
   background: white;
   color: black;
   z-index: 1;
+  /*border-bottom: 1px black solid;*/
 }
 
 #parallax-div {
-  background: url('../public/assets/img/bgimg.jpg');
   height:100%;
   background-attachment: fixed;
 }
@@ -153,9 +153,14 @@ img.bg {
 
 #motto-display {
   color: white;
+  /*font-family: "Courier";*/
   font-family: 'Oldenburg', cursive;
   font-size: 22px;
   margin: 5px;
+  /*white-space: nowrap;*/
+  /*overflow: hidden;*/
+  /*width: 39em;*/
+  /*animation: type 9s infinite;*/
 }
 
 /*@keyframes type{
@@ -166,6 +171,7 @@ img.bg {
 @media (max-width: 767px) {
   #motto-display {
       font-size: 20px;
+      /*width: 17em*/
   }
   #display-name {
     display: none;
@@ -583,6 +589,7 @@ label {
 #whiteFrame {
  margin-bottom: 5%;
  height: 250px;
+ /*width: 80%;*/
  margin-left: 13%;
 }
 
@@ -701,4 +708,8 @@ label {
 .event-card-name {
   color:black;
   font-size:25px;
+}
+
+#filter-text {
+  background-color : #2f4f4f!important;
 }

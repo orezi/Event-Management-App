@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test jasmine-node spec/unit --forceexit --verbose",
     "test-staging": "if [ '$NODE_ENV' = 'production' ]; then echo \"no need for test\"; else jasmine-node spec/unit/ --forceexit --verbose; fi",
-    "start": "if [ '$NODE_ENV' = 'production' ]; then node server.js; else PORT=3030 nodemon server.js; fi",
+    "start": "if [ '$NODE_ENV' = 'production' ]; then gulp; else PORT=3030 gulp dev; fi",
     "start-test": "NODE_ENV=test node server.js",
     "test-e2e": "NODE_ENV=test ./node_modules/protractor/bin/protractor conf.js"
   },
@@ -38,6 +38,7 @@
     "gulp-ng-annotate": "^1.1.0",
     "gulp-nodemon": "^2.0.4",
     "gulp-rename": "^1.2.2",
+    "gulp-strip-line": "0.0.1",
     "gulp-uglify": "^1.4.2",
     "jshint-stylish": "^2.0.1",
     "jsonwebtoken": "^5.0.4",
